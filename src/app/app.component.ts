@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BoardService } from './board.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { EditTalkComponent } from './edit-talk/edit-talk.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { DeleteTalkComponent } from './delete-talk/delete-talk.component';
 import { Board, Talk, Track } from './shared/models/schema.model';
 

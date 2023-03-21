@@ -1,10 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 // import { MAT_DIALOG_DATA, MatDialogRef, MatChipInputEvent } from '@angular/material';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {MAT_DIALOG_DATA, MatDialogRef, MatDialog} from '@angular/material/dialog';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import {MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA, MatLegacyDialogRef as MatDialogRef, MatLegacyDialog as MatDialog} from '@angular/material/legacy-dialog';
 import { ColorPickerDialogComponent } from '../shared/components/color-picker-dialog/color-picker-dialog.component';
 import { IssueType, Talk } from '../shared/models/schema.model';
-import { MatChipInputEvent } from '@angular/material/chips';
+import { MatLegacyChipInputEvent as MatChipInputEvent } from '@angular/material/legacy-chips';
 import { appConstants } from '../shared/appConstants';
 
 @Component({
@@ -14,12 +14,12 @@ import { appConstants } from '../shared/appConstants';
 })
 export class EditTalkComponent implements OnInit {
 
-  formGroup: FormGroup;
+  formGroup: UntypedFormGroup;
   issueTypesArrayWithColor = Object.values(appConstants.issueTypeListWithColor);
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: {talk: Talk, edit: boolean},
     private dialogRef: MatDialogRef<EditTalkComponent>,
-    public formBuilder: FormBuilder,
+    public formBuilder: UntypedFormBuilder,
     public colorPickerdialog: MatDialog
   ) {
   }
